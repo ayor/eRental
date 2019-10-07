@@ -1,0 +1,79 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "List of Videos";
+}
+
+@model IEnumerable<videoModel>
+
+<style>
+    table {
+        width: 100%;
+    }
+
+    th {
+        height: 50px;
+        text-align: center;
+    }
+
+    td {
+        vertical-align: middle;
+    }
+
+    thead :hover, tbody :hover {
+        background-color: #f2f2f2;
+    }
+
+    td, th {
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+    }
+    /*tr :nth-child(even){
+        background-color:#f2f2f2;
+    }*/
+    thead {
+        background-color: rgba(20, 20, 200, 0.5);
+    }
+</style>
+<h3><a asp-action="addVideos" class="btn btn-secondary ">Create Video</a></h3>
+<div class="text-center">
+    <h4>@ViewData["Title"]</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Format</th>
+                <th>Stock</th>
+                <th>X</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (videoModel video in Model)
+            {
+
+                <tr>
+                    <td>@video.ID</td>
+                    <td>
+                        @video.Title
+                    </td>
+                    <td>
+                        @video.Format
+                    </td>
+                    <td>
+                        @video.Stock
+                    </td>
+                    <td>
+                        <form asp-action="DeleteVideo" method="post" asp-route-id="@video.ID">
+                            <button class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+

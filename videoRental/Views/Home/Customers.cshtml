@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Customer Page";
+}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <div class="text-center">
+        <h1>@ViewData["Title"]</h1>
+        <h3 class="display-4"> Select Option</h3><br />
+        <div class="list-group">
+            <a class="list-group-item list-group-item-action d-flex justify-content-between" asp-action="customerList">View List of Customers<i class="fas fa-list-ol"></i></a> 
+            <hr/>
+            <a class="list-group-item list-group-item-action d-flex justify-content-between"asp-action="addCustomer">Add Customer <i class="fas fa-address-book"></i></a> &nbsp;&nbsp;&nbsp;
+        </div>
+    </div>
+</body>
+</html>
+

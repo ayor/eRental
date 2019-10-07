@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Videos";
+}
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+<body>
+    <div class="text-center">
+        <h1 class="display-4">@ViewData["Title"]</h1><br />
+        <h3>Select Preferred Option</h3><br />
+        <div class="list-group">
+            <a class="list-group-item list-group-item-action d-flex justify-content-between" asp-action="videoList"> View List of Videos<i class="fas fa-list-ol"></i></a>
+                <hr />
+                <a class="list-group-item list-group-item-action d-flex justify-content-between" asp-action="checkOut">Check-Out Videos<i class="fas fa-sign-out-alt"></i></a>
+                <hr />
+                <a class="list-group-item list-group-item-action d-flex justify-content-between" asp-action="checkIn">Check-In Videos <i class="fas fa-sign-in-alt"></i></a>
+                <hr />
+                <a class="list-group-item list-group-item-action d-flex justify-content-between" asp-action="addVideos">Add Videos<i class="fas fa-video"></i></a>
+
+        </div>
+    </div>
+</body>
+
+

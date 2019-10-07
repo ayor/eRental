@@ -1,0 +1,74 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "List of Customers";
+}
+
+@model IEnumerable<CustomerModel>
+
+<style>
+    table {
+        width: 100%;
+    }
+
+    th {
+        height: 50px;
+        text-align: center;
+    }
+
+    td {
+        vertical-align: middle;
+    }
+
+    thead :hover, tbody :hover {
+        background-color: #f2f2f2;
+    }
+
+    td, th {
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+    }
+    /*tr :nth-child(even){
+        background-color:#f2f2f2;
+    }*/
+    thead {
+        background-color: rgba(20, 20, 200, 0.5);
+    }
+</style>
+<h3><a asp-action="addCustomer" class="btn btn-secondary ">Create Customer</a></h3>
+<div class="text-center">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>X</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (CustomerModel customer in Model)
+            {
+
+                <tr>
+                    <td>@customer.ID</td>
+                    <td>
+                        @customer.customerName
+                    </td>
+                    <td>
+                        @customer.Address
+                    </td>
+                    <td>
+                        <form asp-action="DeleteCustomer" method="post" asp-route-id="@customer.ID">
+                            <button class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+

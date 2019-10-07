@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewData["Title"] = "Add Video Page";
+}
+
+@model videoModel
+
+<style>
+    .asp-validation-error {
+        border-color: red;
+    }
+
+    input {
+        width: 100%;
+    }
+</style>
+<div class="text-center" asp-validation-summary="ModelOnly"></div>
+
+<h3>@ViewData["Title"] </h3>
+<form asp-action="addCustomers" method="post">
+    <div class="form-group">
+        <label asp-for="Title">Video Title</label>
+        <input asp-for="Title" class="form-control" placeholder="Bat Man" />
+      @*  <span asp-validation-for="Title" class="text-danger"></span>*@
+    </div>
+    <div class="form-group">
+        <label asp-for="Format">Video Format</label> <br />
+        <select asp-for="Format" class="custom-select custom-select-sm">
+            <option selected >Select An Option</option>
+            @foreach (string formats in ViewBag.Formats)
+            {
+                <option value="@formats">@formats</option>
+
+            }
+
+        </select>
+
+        <br />
+       @* <span asp-validation-for="Format" class="text-danger"></span>*@
+    </div>
+    <div class="form-group">
+        <label asp-for="Stock">Video Stock</label>
+        <input asp-for="Stock" class="form-control" placeholder="1" />
+       @* <span asp-validation-for="Stock" class="text-danger"></span>*@
+    </div>
+    <h5 class="text-danger" style="text-align:center;">@ViewBag.Message</h5>
+    <button type="submit" class="btn btn-secondary" style="width:100%;">Add Video</button>
+</form>
+
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+<script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+
+
