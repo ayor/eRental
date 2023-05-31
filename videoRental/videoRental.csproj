@@ -7,7 +7,7 @@
 
 
   <ItemGroup>
-    <PackageReference Include="jquery" Version="3.4.1" />
+    <PackageReference Include="jquery" Version="3.5.0" />
     <PackageReference Include="jquery.validation" Version="1.17.0" />
     <PackageReference Include="jQuery.Validation.Unobtrusive" Version="2.0.20710" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
